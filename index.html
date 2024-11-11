@@ -12,50 +12,6 @@
   </head>
   <body>
     <h1>Master Screen - Video Sync</h1>
-    <video id="masterVideo" src="http://10.0.33.253:8081/mineClip.mp4" preload="auto" muted loop type="video/mp4">
-    </video>
-
-    <script>
-      let video = document.getElementById("masterVideo");
-      //video.muted = true;
-
-      const syncData = () => {
-        console.log("syncCalled");
-        const successCallback = function (successObject) {
-          console.log("Basetime is : " + successObject.basetime);
-        };
-
-        const failureCallback = function (failureObject) {
-          console.log("failure callback");
-          console.error(
-            "[" + failureObject.errorCode + "] " + failureObject.errorText
-          );
-        };
-
-        // Sets the master signage device.
-        var custom = new Custom();
-        custom.VideoSync.setMaster(successCallback, failureCallback, {
-          ip: "10.0.34.94",
-          port: 8081,
-          //Optional property when there are multiple video tags.
-          videoElement: video,
-        });
-        
-      };
-
-       //syncData();
-       video.onloadeddata = function () {
-        console.log('call onload');
-        //syncData();
-        video.play();
-      }
-
-
-      // video.addEventListener('ended', ()=>{
-      //   console.log("video terminou");
-      //   //video.currentTime = 0;
-      //   video.play();
-      // });
-    </script>
-  </body>
+      <iframe src="http://10.0.33.253:8081/screen1.html" frameborder="0"></iframe>
+  </body>"
 </html>
